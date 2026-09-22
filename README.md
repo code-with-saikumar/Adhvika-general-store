@@ -1,73 +1,235 @@
-# Welcome to your Lovable project
+# Advika General Store
 
-## Project info
+Advika General Store is a modern online grocery shopping platform designed to help customers browse products, manage their shopping cart, and place orders conveniently online.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The application provides a simple and user-friendly shopping experience for a local grocery store, with product management and order-related functionality.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+* 🛒 Browse grocery products
+* 🔎 Search and explore products
+* 🗂️ Product categories
+* 🛍️ Add products to cart
+* ➕ Increase or decrease product quantities
+* 🗑️ Remove products from cart
+* 💳 Online payment integration
+* 📦 Order placement and management
+* 👤 Customer-friendly shopping interface
+* 📱 Responsive design for mobile, tablet, and desktop
+* 🔐 Secure environment variable configuration
+* ⚙️ Admin functionality for managing store data
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+* **Frontend:** React
+* **Language:** TypeScript
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS
+* **UI Components:** shadcn/ui
+* **Payment Gateway:** Razorpay
+* **Database / Backend Services:** Supabase
+* **Version Control:** Git & GitHub
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Make sure the following are installed on your system:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* Node.js
+* npm
+* Git
 
-Follow these steps:
+You can verify the installations using:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+node --version
+npm --version
+git --version
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+Clone the repository:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+```
+
+Navigate to the project directory:
+
+```bash
+cd advika-general-store
+```
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory of the project.
+
+Add the required configuration values:
+
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+If Razorpay or other services require additional configuration, add those values according to the application's backend configuration.
+
+### Important
+
+Never commit your `.env` file or expose secret API keys in the repository.
+
+Add the following to `.gitignore`:
+
+```gitignore
+.env
+.env.local
+node_modules/
+dist/
+```
+
+## Running the Application
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will normally be available at:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```text
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+## Production Build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Create a production build:
 
-## What technologies are used for this project?
+```bash
+npm run build
+```
 
-This project is built with:
+Preview the production build locally:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run preview
+```
 
-## How can I deploy this project?
+## Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```text
+advika-general-store/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── lib/
+│   └── ...
+│
+├── supabase/
+├── test/
+│
+├── .env.example
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── tailwind.config.ts
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Payment Integration
 
-Yes, you can!
+The application supports online payments through Razorpay.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The typical payment flow is:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```text
+Customer
+   ↓
+Select Products
+   ↓
+Add to Cart
+   ↓
+Checkout
+   ↓
+Razorpay Payment
+   ↓
+Payment Verification
+   ↓
+Order Confirmation
+```
+
+Payment credentials and other sensitive configuration values should always be stored securely using environment variables.
+
+## Admin Features
+
+The application can be extended with an administrative interface for managing:
+
+* Products
+* Product categories
+* Prices
+* Stock availability
+* Customer orders
+* Order status
+* Store information
+
+## Development Workflow
+
+After making changes to the project:
+
+```bash
+git add .
+git commit -m "Describe your changes"
+git push
+```
+
+To retrieve the latest changes:
+
+```bash
+git pull
+```
+
+## Security
+
+For security and production deployment:
+
+* Never commit `.env` files.
+* Never expose private API keys.
+* Never store payment secrets in frontend code.
+* Validate payment responses on the server.
+* Validate user input before storing it.
+* Use authenticated access for administrative functionality.
+* Keep dependencies updated.
+
+## Future Improvements
+
+Possible future enhancements include:
+
+* Delivery tracking
+* Customer order history
+* Product reviews and ratings
+* Wishlist functionality
+* Discount coupons
+* Inventory management
+* Sales analytics dashboard
+* WhatsApp order notifications
+* Location-based delivery
+* Multiple payment options
+* Automated order notifications
+
+## License
+
+This project is developed for educational and commercial development purposes.
