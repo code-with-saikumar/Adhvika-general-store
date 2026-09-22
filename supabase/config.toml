@@ -1,0 +1,10 @@
+project_id = "ncgaltrayqzskqofjrll"
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.send-otp]
+verify_jwt = false
+
+[functions.verify-otp-reset]
+verify_jwt = false
